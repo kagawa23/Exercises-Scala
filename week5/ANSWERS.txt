@@ -1,0 +1,87 @@
+  // Exercise 1 (CB 6.1)
+
+  def nonNegativeInt(rng: RNG): (Int, RNG) = {
+    val (randomInt, rng1) = rng.nextInt;
+    if (randomInt == Int.MinValue)
+      (randomInt - 1, rng1)
+    else if (randomInt < 0)
+      ((-1) * randomInt, rng1)
+    else
+      (randomInt, rng1)
+  }
+
+  val (value, rng) = RNG.nonNegativeInt(Simple(1))
+  assert(value != Int.MinValue)
+  assert(value >= 0)
+
+  // Exercise 2 (CB 6.2)
+ def double(rng: RNG): (Double, RNG) = {
+    val (value, rng1) = rng.nextInt
+    val randomDouble = value.toDouble
+    if (value == Int.MaxValue)
+      ((randomDouble - 1 / Int.MaxValue).toDouble, rng1)
+    else
+      ((randomDouble / Int.MaxValue).toDouble, rng1)
+  }
+
+   val (valueDouble, rngD) = RNG.double(Simple(1))
+   assert(valueDouble >= 0)
+   assert(valueDouble < 1)
+
+ // Exercise 3 (CB 6.3)
+ def intDouble(rng: RNG): ((Int, Double), RNG) = {
+    val (randomInt, rngInt) = nonNegativeInt(rng)
+    val (randomDouble, rngDouble) = double(rngInt)
+    ((randomInt, randomDouble), rngDouble)
+ }
+  val ((valueInt2, valueDouble2), rngD2) = RNG.intDouble(Simple(1))
+  assert(valueInt2 != Int.MinValue)
+  assert(valueInt2 >= 0)
+  assert(valueDouble2 >= 0)
+  assert(valueDouble2 < 1)
+
+ def doubleInt(rng: RNG): ((Double, Int), RNG) = {
+    val (randomInt, rngInt) = nonNegativeInt(rng)
+    val (randomDouble, rngDouble) = double(rngInt)
+    ((randomDouble, randomInt), rngDouble)
+  }
+
+  val ((valueDouble3, valueInt3), rngD3) = RNG.doubleInt(Simple(1))
+  assert(valueInt3 != Int.MinValue)
+  assert(valueInt3 >= 0)
+  assert(valueDouble3 >= 0)
+  assert(valueDouble3 < 1)
+
+  def double3(rng: RNG): ((Double, Double, Double), RNG) = {
+    val (randomDouble1, rngDouble1) = double(rng)
+    val (randomDouble2, rngDouble2) = double(rngDouble1)
+    val (randomDouble3, rngDouble3) = double(rngDouble2)
+    ((randomDouble1, randomDouble2, randomDouble3), rngDouble3)
+  }
+
+  val ((valueDouble4, valueDouble5, valueDouble6), rngD4) = RNG.double3(Simple(1))
+  assert(valueDouble4 >= 0)
+  assert(valueDouble4 < 1)
+  assert(valueDouble5 >= 0)
+  assert(valueDouble5 < 1)
+  assert(valueDouble6 >= 0)
+  assert(valueDouble6 < 1)
+
+  // Exercise 4 (CB 6.4)
+  def ints(count: Int)(rng: RNG): (List[Int], RNG) = {
+    def go(l: List[Int], count: Int, rng: RNG): (List[Int], RNG) = {
+      if (count == 0)
+        (l, rng)
+      else {
+        val (randomInt, rngInt) = rng.nextInt
+        go(randomInt :: l, count - 1, rngInt)
+      }
+    }
+    val (list, rnd) = go(List(), count, rng)
+    (list, rnd)
+  }
+
+  val (listInts, rnd) = RNG.ints(1)(this.rngI)
+  assert(listInts.size == 1)
+  val (listInts2, rnd2) = RNG.ints(20)(this.rngI)
+  assert(listInts2.size == 10)

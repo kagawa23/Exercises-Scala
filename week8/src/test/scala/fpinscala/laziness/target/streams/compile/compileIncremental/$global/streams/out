@@ -1,0 +1,119 @@
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
+[0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3b4e36f2, interfacing (CompilerInterface) with Scala compiler version 2.10.6[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Pati/.sbt/boot/scala-2.10.6/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:4: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest.FlatSpec[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:5: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest.prop.Checkers[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:6: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:7: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck.Prop._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:8: not found: object Arbitrary[0m
+[0m[[31merror[0m] [0mimport Arbitrary.arbitrary[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:15: not found: object stream00[0m
+[0m[[31merror[0m] [0mimport stream00._    // uncomment to test the book solution[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:19: not found: type FlatSpec[0m
+[0m[[31merror[0m] [0mclass StreamSpecWasowski extends FlatSpec with Checkers {[0m
+[0m[[31merror[0m] [0m                                 ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:19: not found: type Checkers[0m
+[0m[[31merror[0m] [0mclass StreamSpecWasowski extends FlatSpec with Checkers {[0m
+[0m[[31merror[0m] [0m                                               ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:25: not found: value behavior[0m
+[0m[[31merror[0m] [0m  behavior of "headOption"[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:29: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "return None on an empty Stream (01)" in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:37: not found: type Gen[0m
+[0m[[31merror[0m] [0m  def genNonEmptyStream[A] (implicit arbA :Arbitrary[A]) :Gen[Stream[A]] =[0m
+[0m[[31merror[0m] [0m                                                          ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:37: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m  def genNonEmptyStream[A] (implicit arbA :Arbitrary[A]) :Gen[Stream[A]] =[0m
+[0m[[31merror[0m] [0m                                           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:38: not found: value arbitrary[0m
+[0m[[31merror[0m] [0m  for { la <- arbitrary[List[A]] suchThat (_.nonEmpty)}[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:43: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "return the head of the stream packaged in Some (02)" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:55: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "return the head of the stream, and make sure execution stops (03)" in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:62: not found: value behavior[0m
+[0m[[31merror[0m] [0m  behavior of "take"[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:64: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "not force any heads nor any tails of the Stream it manipulates & not force (n+1)st head (01+02)" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:73: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "hold that s.take(n).take(n) == s.take(n) for any Stream s and any n (idempotency)" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:86: not found: value behavior[0m
+[0m[[31merror[0m] [0m  behavior of "drop"[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:91: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "hold that s.drop(n).drop(m) == s.drop(n+m) for any n, m (additivity)" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:104: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "hold that s.drop(n) does not force any of the dropped elements heads" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:114: not found: value behavior[0m
+[0m[[31merror[0m] [0m  behavior of "map"[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:117: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "hold that x.map(id) == x" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:124: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "hold that map terminates on infinite streams" in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:131: not found: value behavior[0m
+[0m[[31merror[0m] [0m  behavior of "append"[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:133: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "not force tail or head on the stream that is appended to" in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:141: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "not force tail or head on the stream that is appended" in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:149: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "should terminate on any finite stream" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:156: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "should terminate on infinite streams" in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week8/src/test/scala/fpinscala/laziness/StreamSpecWasowski.scala:162: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "hold that the appended stream is appended at the end" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m30 errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m

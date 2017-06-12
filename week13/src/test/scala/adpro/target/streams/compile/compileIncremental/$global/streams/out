@@ -1,0 +1,251 @@
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
+[0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 654b5c06, interfacing (CompilerInterface) with Scala compiler version 2.10.6[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Pati/.sbt/boot/scala-2.10.6/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:10: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest.{FunSuite,FlatSpec}[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:11: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest.prop.Checkers[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:12: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:13: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck.Prop._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:14: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck.Arbitrary[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:15: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck.Arbitrary._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:17: not found: object monocle[0m
+[0m[[31merror[0m] [0mimport monocle._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:18: not found: object monocle[0m
+[0m[[31merror[0m] [0mimport monocle.{Lens,Optional} // we prefer these from Monocle than Scalaz[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:19: not found: object scalaz[0m
+[0m[[31merror[0m] [0mimport scalaz._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:20: not found: object Scalaz[0m
+[0m[[31merror[0m] [0mimport Scalaz._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:21: not found: object scalaz[0m
+[0m[[31merror[0m] [0mimport scalaz.scalacheck.ScalazArbitrary._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:23: not found: object main[0m
+[0m[[31merror[0m] [0mimport main.scala.adpro.Lenses._[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:28: not found: type FlatSpec[0m
+[0m[[31merror[0m] [0mclass LensesSpec extends FlatSpec with Checkers {[0m
+[0m[[31merror[0m] [0m                         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:28: not found: type Checkers[0m
+[0m[[31merror[0m] [0mclass LensesSpec extends FlatSpec with Checkers {[0m
+[0m[[31merror[0m] [0m                                       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:35: not found: type Prop[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                                 ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:34: not found: type Lens[0m
+[0m[[31merror[0m] [0m  def PutGet[C,A] (l: Lens[C,A])[0m
+[0m[[31merror[0m] [0m                      ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:35: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:35: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:36: not found: value forAll[0m
+[0m[[31merror[0m] [0m    forAll{(a:A, c:C) => l.get(l.set(a)(c)) == a}[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:39: not found: type Prop[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                                 ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:38: not found: type Lens[0m
+[0m[[31merror[0m] [0m  def GetPut[C,A] (l: Lens[C,A])[0m
+[0m[[31merror[0m] [0m                      ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:39: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:39: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:40: not found: value forAll[0m
+[0m[[31merror[0m] [0m    forAll{(a:A, c:C) => l.set(l.get(c))(c) == c}[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:43: not found: type Prop[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                                 ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:42: not found: type Lens[0m
+[0m[[31merror[0m] [0m  def PutPut[C,A] (l: Lens[C,A])[0m
+[0m[[31merror[0m] [0m                      ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:43: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:43: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                  (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:44: not found: value forAll[0m
+[0m[[31merror[0m] [0m    forAll{(a:A, c:C) => l.set(a)(l.set(a)(c)) == l.set(a)(c)}[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:49: not found: value it[0m
+[0m[[31merror[0m] [0m    it should "obey the PutGet law" in check { PutGet (l) }[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:50: not found: value it[0m
+[0m[[31merror[0m] [0m    it should "obey the GetPut law" in check { GetPut (l) }[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:47: not found: type Lens[0m
+[0m[[31merror[0m] [0m  def wellBehavedTotalLense[A,C] (l: Lens[C,A])[0m
+[0m[[31merror[0m] [0m                                     ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:48: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                 (implicit ac: Arbitrary[C], aa: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                               ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:48: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                 (implicit ac: Arbitrary[C], aa: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                                                 ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:55: not found: value it[0m
+[0m[[31merror[0m] [0m    it should behave like wellBehavedTotalLense (l)[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:56: not found: value it[0m
+[0m[[31merror[0m] [0m    it should "obey the PutPut law" in check { PutPut (l) }[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:53: not found: type Lens[0m
+[0m[[31merror[0m] [0m  def veryWellBehavedTotalLense[A,C] (l: Lens[C,A])[0m
+[0m[[31merror[0m] [0m                                         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:54: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                     (implicit aC: Arbitrary[C], aA: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                                   ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:54: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                     (implicit aC: Arbitrary[C], aA: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                                                     ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:66: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "codiag[Int]" should behave like veryWellBehavedTotalLense (codiag[Int])[0m
+[0m[[31merror[0m] [0m                ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:67: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "codiag[String]" should behave like veryWellBehavedTotalLense (codiag[String])[0m
+[0m[[31merror[0m] [0m                   ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:68: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "codiag1[Int]" should behave like veryWellBehavedTotalLense (codiag1[Int])[0m
+[0m[[31merror[0m] [0m                 ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:69: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "codiag1[String]" should behave like veryWellBehavedTotalLense (codiag1[String])[0m
+[0m[[31merror[0m] [0m                    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:75: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "itu" should "show Alex at zipcode 2800" in[0m
+[0m[[31merror[0m] [0m        ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:78: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "itu1" should "show Alex at zipcode 9100" in[0m
+[0m[[31merror[0m] [0m         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:85: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "itu2" should "show Alex at zipcode 9100" in[0m
+[0m[[31merror[0m] [0m         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:92: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "itu3" should "have all the countries in upper case" in[0m
+[0m[[31merror[0m] [0m         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:110: not found: type Prop[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                                        ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:109: not found: type Optional[0m
+[0m[[31merror[0m] [0m  def PartialPutGet[C,A] (l: Optional[C,A])[0m
+[0m[[31merror[0m] [0m                             ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:110: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:110: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:111: not found: value forAll[0m
+[0m[[31merror[0m] [0m    forAll{(a:A, c:C) => l.getOption(l.set(a)(c)).forall(aa => aa == a)}[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:114: not found: type Prop[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                                        ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:113: not found: type Optional[0m
+[0m[[31merror[0m] [0m  def PartialGetPut[C,A] (l: Optional[C,A])[0m
+[0m[[31merror[0m] [0m                             ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:114: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:114: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:115: not found: value forAll[0m
+[0m[[31merror[0m] [0m    forAll{(a:A, c:C) => l.getOption(c).forall(aa => l.set(aa)(c) == c )}[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:118: not found: type Prop[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                                        ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:117: not found: type Optional[0m
+[0m[[31merror[0m] [0m  def PartialPutPut[C,A] (l: Optional[C,A])[0m
+[0m[[31merror[0m] [0m                             ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:118: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:118: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                         (implicit aA: Arbitrary[A], aC: Arbitrary[C]) :Prop =[0m
+[0m[[31merror[0m] [0m                                                         ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:119: not found: value forAll[0m
+[0m[[31merror[0m] [0m    forAll{(a:A, c:C) => l.set(a)(l.set(a)(c)) == l.set(a)(c)}[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:125: not found: value it[0m
+[0m[[31merror[0m] [0m    it should "obey the PartialPutGet law" in check { PartialPutGet (l) }[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:126: not found: value it[0m
+[0m[[31merror[0m] [0m    it should "obey the PartialGetPut law" in check { PartialGetPut (l) }[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:123: not found: type Optional[0m
+[0m[[31merror[0m] [0m  def wellBehavedPartialLense[A,C] (l: Optional[C,A])[0m
+[0m[[31merror[0m] [0m                                       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:124: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                   (implicit ac: Arbitrary[C], aa: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                                 ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:124: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                   (implicit ac: Arbitrary[C], aa: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                                                   ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:131: not found: value it[0m
+[0m[[31merror[0m] [0m    it should behave like wellBehavedPartialLense (l)[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:132: not found: value it[0m
+[0m[[31merror[0m] [0m    it should "obey the PartialPutPut law" in check { PartialPutPut (l) }[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:129: not found: type Optional[0m
+[0m[[31merror[0m] [0m  def veryWellBehavedPartialLense[A,C] (l: Optional[C,A])[0m
+[0m[[31merror[0m] [0m                                           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:130: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                       (implicit aC: Arbitrary[C], aA: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                                     ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:130: not found: type Arbitrary[0m
+[0m[[31merror[0m] [0m                                       (implicit aC: Arbitrary[C], aA: Arbitrary[A]) = {[0m
+[0m[[31merror[0m] [0m                                                                       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:135: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "setIth" should behave like veryWellBehavedPartialLense (setIth[Int](5))[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week13/src/test/scala/adpro/LensesSpec.scala:136: value should is not a member of String[0m
+[0m[[31merror[0m] [0m  "setIth1" should behave like veryWellBehavedTotalLense (setIth1[Int](5,-1)) // fails GetPut as expected[0m
+[0m[[31merror[0m] [0m            ^[0m
+[0m[[31merror[0m] [0m74 errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m

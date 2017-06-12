@@ -1,0 +1,63 @@
+ //Exercise 1
+  def to(n: Int): Stream[Int] = {
+    @annotation.tailrec
+    def go(i: Int, stream: Stream[Int]): Stream[Int] = {
+      if (i >= 1)
+        go(i - 1, cons(i, stream))
+      else
+        stream
+    }
+
+    go(n, empty)
+  }
+
+  def from(n: Int): Stream[Int] = {
+    cons(n, from(n + 1))
+  }
+ val naturals: Stream[Int] = Empty
+  val expected = cons(1, cons(2, cons(3, cons(4, cons(5, cons(6, cons(7, cons(8,
+    cons(9, cons(10, Empty))))))))))
+  assert(expected.toList == naturals.to(10).toList)
+  assert(Some(1) == naturals.from(1).headOption())
+
+  //Exercise 2
+  def toList: List[A] = {
+    val buf = new collection.mutable.ListBuffer[A]
+
+    @annotation.tailrec
+    def go(stream: Stream[A]): List[A] = {
+      stream match {
+        case Empty =>
+          buf.toList
+        case Cons(h, t) => {
+          buf += h()
+          go(t())
+        }
+      }
+    }
+
+    go(this)
+  }
+
+  assert(expected.toList == List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+
+  //Exercise 3
+  def take(n: Int): Stream[A] = {
+    this match {
+      case Cons(h, t) if n > 1 => cons(h(), t().take(n - 1))
+      case Cons(h, _) if (n == 1) => cons(h(), empty)
+      case _ => empty
+    }
+  }
+
+  def drop(n: Int): Stream[A] = {
+    this match {
+      case Cons(_, t) if n > 0 => t().drop(n - 1)
+      case _ => this
+    }
+  }
+
+  val expected3 = cons(1, cons(2, Empty))
+  assert(expected3.toList == naturals.from(1).take(2).toList)
+  val expected32 = cons(9, cons(10, Empty))
+  assert(naturals.to(10).drop(8).toList == expected32.toList)

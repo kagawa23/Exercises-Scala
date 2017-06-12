@@ -1,0 +1,98 @@
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
+[0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.13:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3175dc8c, interfacing (CompilerInterface) with Scala compiler version 2.10.6[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/classes:/Users/Pati/.sbt/boot/scala-2.10.6/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:11: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest.FlatSpec[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:12: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest.Matchers._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:13: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest.prop.Checkers[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:14: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:15: object scalacheck is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalacheck.Prop._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:16: not found: object Arbitrary[0m
+[0m[[31merror[0m] [0mimport Arbitrary.arbitrary[0m
+[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:17: object main is not a member of package week10.src[0m
+[0m[[31merror[0m] [0mimport week10.src.main.scala.adpro.monads.{BasicEvaluator, Cons, Div, Term}[0m
+[0m[[31merror[0m] [0m                  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:20: not found: type FlatSpec[0m
+[0m[[31merror[0m] [0mclass  TermSpec extends FlatSpec with Checkers {[0m
+[0m[[31merror[0m] [0m                        ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:20: not found: type Checkers[0m
+[0m[[31merror[0m] [0mclass  TermSpec extends FlatSpec with Checkers {[0m
+[0m[[31merror[0m] [0m                                      ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:24: not found: value Div[0m
+[0m[[31merror[0m] [0m  val answer = Div ([0m
+[0m[[31merror[0m] [0m               ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:28: not found: value Div[0m
+[0m[[31merror[0m] [0m  val error = Div ( Cons (1), Cons (0) )[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:29: not found: value Cons[0m
+[0m[[31merror[0m] [0m  val const = Cons (42)[0m
+[0m[[31merror[0m] [0m              ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:33: not found: type Gen[0m
+[0m[[31merror[0m] [0m  val genSafeTerm :Gen[Term] = {[0m
+[0m[[31merror[0m] [0m                   ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:34: not found: value Arbitrary[0m
+[0m[[31merror[0m] [0m    implicit val int100 = Arbitrary[Int](Gen.choose[Int](0,999))[0m
+[0m[[31merror[0m] [0m                          ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:35: not found: value arbitrary[0m
+[0m[[31merror[0m] [0m    arbitrary[List[Int]].suchThat(l => l.nonEmpty && l.forall (_!=0)).[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:42: not found: type Gen[0m
+[0m[[31merror[0m] [0m  val genUnsafeTerm :Gen[Term] = {[0m
+[0m[[31merror[0m] [0m                     ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:43: not found: value Arbitrary[0m
+[0m[[31merror[0m] [0m    implicit val int100 = Arbitrary[Int](Gen.choose[Int](0,999))[0m
+[0m[[31merror[0m] [0m                          ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:44: not found: value arbitrary[0m
+[0m[[31merror[0m] [0m    arbitrary[List[Int]].suchThat(l => l.nonEmpty && l.forall (_!=0)).[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:53: not found: value behavior[0m
+[0m[[31merror[0m] [0m  behavior of "Basic eval"[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:54: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "answer 42 to a division [Wadler]" in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:56: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "return 42 from a constant " in {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:58: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "throw a scala exception on division by 0" in[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m/Users/Pati/Desktop/Exercises/src/week10/src/test/scala/adpro/monads/TermSpec.scala:61: not found: value it[0m
+[0m[[31merror[0m] [0m  it should "crash on unsafe terms" in check {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m23 errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m

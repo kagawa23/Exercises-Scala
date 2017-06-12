@@ -1,0 +1,267 @@
+Exercise 1
+trait OrderedPoint extends scala.math.Ordered[Point] {
+  this: java.awt.Point =>
+  override def compare(that: java.awt.Point): Int = {
+    if (this.x.<(that.x) || ((this.x ==that.x) && this.y.<(that.y)))
+      -1
+    else
+      1
+  }
+}
+  val p = new java.awt.Point(0, 1) with OrderedPoint
+  val q = new java.awt.Point(0, 2) with OrderedPoint
+  assert(p < q)
+  val p1 = new java.awt.Point(10, 52) with OrderedPoint
+  val q1 = new java.awt.Point(20, 2) with OrderedPoint
+  assert(p1 < q1)
+
+  val p2 = new java.awt.Point(10, 52) with OrderedPoint
+  val q2 = new java.awt.Point(10, 52) with OrderedPoint
+  assert(p1 < q1)
+
+Exercise 2
+  def size[A](t: Tree[A]): Int = {
+    t match {
+      case Leaf(t) =>
+        1
+      case Branch(left, right) =>
+        size(left) + size(right)
+    }
+
+  assert(Tree.size(Leaf(1)) == 1)
+  assert(Tree.size(Leaf(20)) == 1)
+  assert(Tree.size(Branch(Leaf(1), Leaf(2))) == 2)
+  assert(Tree.size(Branch(Branch(Leaf(1), Leaf(30)), Leaf(2))) == 3)
+  val leftBranch: Tree[Int] = Branch(Leaf(1), Leaf(30));
+
+  val rightBranch: Tree[Int] = Branch((Branch(Leaf(2), Leaf(39))), Branch(Leaf(2), Leaf(39)));
+  assert(Tree.size(Branch(leftBranch, rightBranch))
+    == 6)
+
+  // Exercise 3 (3.26)
+  def maximum(t: Tree[Int]): Int = {
+    def go(t: Tree[Int]): Int = {
+      t match {
+        case Leaf(value) =>
+          value
+        case Branch(left, right) =>{
+          val l = go(left)
+          val r = go(right)
+          l.max(r)
+        }
+      }
+    }
+    go(t)
+  }
+
+  assert(Tree.maximum(Branch(Leaf(1), Leaf(2))) == 2)
+  assert(Tree.maximum(Branch(Leaf(49), Leaf(50))) == 50)
+  assert(Tree.maximum(Branch(Branch(Leaf(1), Leaf(30)), Leaf(2))) == 30)
+  assert(Tree.maximum(Branch(leftBranch, rightBranch)) == 39)
+
+  // Exercise 4 (3.28)
+  def map[A, B](t: Tree[A])(f: A => B): Tree[B] = {
+    t match {
+      case Leaf(x) => Leaf(f(x))
+      case Branch(l, r) => Branch(map(l)(f), map(r)(f))
+    }
+  }
+
+  val t4 = Branch(Leaf(1), Branch(Branch(Leaf(2), Leaf(3)), Leaf(4)))
+  val t5 = Branch(Leaf("1"), Branch(Branch(Leaf("2"), Leaf("3")), Leaf("4")))
+  assert(Tree.map(t4)(_.toString) == t5)
+
+  //     Exercise 5 (3.29)
+  def fold[A, B](t: Tree[A])(f: A => B)(g: (B, B) => B): B = {
+    t match {
+      case Leaf(value) =>
+        f(value)
+      case Branch(left, right) => {
+        g(fold(left)(f)(g), fold(right)(f)(g))
+      }
+    }
+  }
+
+ val f = (a: A) => 1
+    val g = (i1: Int, i2: Int) => 1 + i1 + i2
+    fold(t)(f)(g)
+  }
+
+  def maximum1(t: Tree[Int]): Int = {
+    val g = (a: Int, b: Int) => a.max(b)
+    fold(t)(a => a)(g)
+  }
+
+  def map1[A, B](t: Tree[A])(f: A => B): Tree[B] = {
+    t match {
+      case Leaf(value) =>
+        Leaf(f(value))
+      case Branch(left, right) => {
+        Branch(map1(left)(f), map1(right)(f))
+      }
+    }
+  }
+
+  assert(Tree.size1(Branch(Leaf(1), Leaf(2))) == 3)
+  assert(Tree.maximum1(Branch(Leaf(1), Leaf(2))) == 2)
+  assert(Tree.map1(t4)(_.toString) == t5)
+  val t6 = Branch(Leaf(1), Branch(Branch(Leaf(2), Leaf(3)), Leaf(4)))
+  val t7 = Branch(Leaf(2), Branch(Branch(Leaf(4), Leaf(6)), Leaf(8)))
+  assert(Tree.map1(t6)(a => a * 2) == t7)
+
+Exercise 6
+
+// Exercise 6 (4.1)
+  def map[B](f: A => B): Option[B] = {
+    this match {
+      case None => None
+      case Some(a) =>
+        Some(f(a))
+    }
+  }
+  //   Ignore the arrow in default's type below for the time being.
+    //   (it should work (almost) as if it was not there)
+    def getOrElse[B >: A](default: => B): B = {
+      this match {
+        case None => default
+        case Some(a) =>
+          a
+      }
+    }
+
+    def flatMap[B](f: A => Option[B]): Option[B] = {
+      this match {
+        case None => None
+        case Some(a) =>
+          f(a)
+      }
+    }
+
+    //   Ignore the arrow in ob's type this week
+    def orElse[B >: A](ob: => Option[B]): Option[B] = {
+      this match {
+        case None =>
+          ob
+        case Some(a) =>
+          Some(a)
+      }
+    }
+
+    //
+    def filter(f: A => Boolean): Option[A] = {
+      this match {
+        case None => None
+        case Some(a) =>
+          if (f(a))
+            this
+          else
+            None
+      }
+    }
+
+ assert(Some(1).map(x => x + 1) == Some(2))
+  assert(Some(2).map(x => x * 2) == Some(4))
+  assert(Some(2).map(x => x / 2) == Some(1))
+  assert(Some(2).map(x => if (x % 2 == 0) x + 10 else x - 5) == Some(12))
+  assert(Some(3).map(x => if (x % 2 == 0) x + 10 else x - 5) == Some(-2))
+  assert(Some(41).getOrElse(42) == 41)
+  assert(Some(0).getOrElse(10) == 0)
+  assert(None.getOrElse(42) == 42)
+  assert(None.getOrElse(0) == 0)
+  assert(Some(1).flatMap(x => Some(x + 1)) == Some(2))
+  assert((None: Option[Int]).flatMap[Int](x => Some(x + 1)) == None)
+  assert(Some(1).flatMap(x => Some(x + 1)) == Some(2))
+  assert(Some(5).flatMap(x => Some(2 * x)) == Some(10))
+  assert(Some(41).orElse(Some(42)) == Some(41))
+  assert(None.orElse(Some(42)) == Some(42))
+  assert(Some(42).filter(_ == 42) == Some(42))
+  assert(Some(41).filter(_ == 42) == None)
+  assert(Some(41).filter(_ % 2 == 0) == None)
+  assert(Some(2).filter(_ % 2 == 0) == Some(2))
+  assert((None: Option[Int]).filter(_ == 42) == None)
+
+   // Exercise 7
+  def variance(xs: Seq[Double]): Option[Double] = {
+    mean(xs).flatMap(m => mean(xs.map(x => math.pow(x - m, 2))))
+  }
+
+    assert(ExercisesOption.variance(List(42, 42, 42)) == Some(0.0))
+    assert(ExercisesOption.variance(List()) == None)
+
+
+    // Exercise 8
+  def map2[A, B, C](ao: Option[A], bo: Option[B])(f: (A, B) => C): Option[C] = {
+      //    ao.flatMap(a => bo.map(b => f(a, b)))
+      //the above written with for comprehension
+      for {aa <- ao; bb <- bo} yield f(aa, bb)
+    }
+
+  assert(ExercisesOption.map2(Some(42), Some(7))(_ + _) == Some(49))
+  assert(ExercisesOption.map2(Some(42), None)(_ + _) == None)
+  assert(ExercisesOption.map2(None: Option[Int], Some(7))(_ + _) == None)
+  assert(ExercisesOption.map2(None: Option[Int], None)(_ + _) == None)s
+
+    //   Exercise 9 (4.4)
+    def sequence[A](aos: List[Option[A]]): Option[List[A]] = {
+      aos.foldRight[Option[List[A]]](Some(Nil))((x, y) => map2(x, y)(_ :: _))
+    }
+
+    /*
+      This is kept for learning purpose
+     */
+    def sequenceWithMatchCase[A](a: List[Option[A]]): Option[List[A]] = {
+      a match {
+        case Nil => Some(Nil)
+        case h :: t => h flatMap (hh => sequenceWithMatchCase(t) map (hh :: _))
+      }
+    }
+
+    assert(ExercisesOption.map2(Some(42), Some(7))(_ + _) == Some(49))
+    assert(ExercisesOption.map2(Some(42), None)(_ + _) == None)
+    assert(ExercisesOption.map2(None: Option[Int], Some(7))(_ + _) == None)
+    assert(ExercisesOption.map2(None: Option[Int], None)(_ + _) == None)
+
+    // Exercise 9
+ def sequence[A](aos: List[Option[A]]): Option[List[A]] = {
+    aos.foldRight[Option[List[A]]](Some(Nil))((x, y) => map2(x, y)(_ :: _))
+  }
+
+    assert(ExercisesOption.sequence(List(Some(1), Some(2), Some(42))) == Some(List(1, 2, 42)))
+    assert(ExercisesOption.sequence(List(None, Some(2), Some(42))) == None)
+    assert(ExercisesOption.sequence(List(Some(1), None, Some(42))) == None)
+    assert(ExercisesOption.sequence(List(Some(1), Some(2), None)) == None)
+    //these kept for learning purpose only
+    assert(ExercisesOption.sequenceWithMatchCase(List(Some(1), Some(2), Some(42))) == Some(List(1, 2, 42)))
+    assert(ExercisesOption.sequenceWithMatchCase(List(None, Some(2), Some(42))) == None)
+    assert(ExercisesOption.sequenceWithMatchCase(List(Some(1), None, Some(42))) == None)
+    assert(ExercisesOption.sequenceWithMatchCase(List(Some(1), Some(2), None)) == None)
+
+
+    // Exercise 10
+  //using map and sequence , but try for a more efficient implementation that
+  //  only looks at the list once
+  def traverse[A, B](as: List[A])(f: A => Option[B]): Option[List[B]] = {
+    as.foldRight[Option[List[B]]](Some(Nil))((h,t) => map2(f(h),t)(_ :: _))
+  }
+
+  /*
+    This is kept for learning purpose
+   */
+  def traverseWithMatching[A, B](as: List[A])(f: A => Option[B]):
+  Option[List[B]] = {
+    as match {
+      case Nil => Some(Nil)
+      case h :: t => map2(f(h), traverseWithMatching(t)(f))(_ :: _)
+    }
+  }
+
+    def f(n: Int): Option[Int] = if (n % 2 == 0) Some(n) else None
+
+    assert(ExercisesOption.traverse(List(1, 2, 42))(Some(_)) == Some(List(1, 2, 42)))
+    assert(ExercisesOption.traverse(List(1, 2, 42))(f) == None)
+    assert(ExercisesOption.traverse(List(4, 2, 42))(f) == Some(List(4, 2, 42)))
+
+    assert(ExercisesOption.traverseWithMatching(List(1, 2, 42))(Some(_)) == Some(List(1,
+      2, 42)))
+    assert(ExercisesOption.traverseWithMatching(List(1, 2, 42))(f) == None)
+    assert(ExercisesOption.traverseWithMatching(List(4, 2, 42))(f) == Some(List(4, 2, 42)))

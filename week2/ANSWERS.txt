@@ -1,0 +1,382 @@
+Exercise 1
+The matched case will be
+case Cons(x, Cons(y, Cons(3, Cons(4, _)))) => x + y
+and the result will be 1 + 2 = 3
+
+Exercise 2
+
+def tail[A](as: List[A]): List[A] = {
+    as match {
+      case Nil => Nil
+      case Cons(head, tail) => tail
+    }
+  }
+
+object Exercise2Test extends App {
+  assert(List.tail(List(1,2,3,4,5)) == List(2,3,4,5))
+  assert(List.tail(List(1)) == Nil)
+  assert(List.tail(Nil) == Nil)
+}
+
+If the list is Nil, then I would return a Nil list.
+Another option would be (though I don't know how) to throw a customized exception for this case.
+
+Exercise 3
+
+def setHead[A](as: List[A], newHead: A): List[A] = {
+    as match {
+      case Nil => Nil
+      case Cons(head, tail) => Cons(newHead, tail)
+    }
+
+object Exercise3Test extends App {
+  assert(List.setHead(List(1,2,3,4,5), 8) == List(8,2,3,4,5))
+  assert(List.setHead(List(1,2,3,4,5), 0) == List(0,2,3,4,5))
+  assert(List.setHead(List(1), 0) == List(0))
+  assert(List.tail(Nil) == Nil)
+}
+
+Exercise 4
+
+  def drop[A](l: List[A], n: Int): List[A] = {
+    @annotation.tailrec
+    def go(l: List[A], i: Int): List[A] = {
+      if (i < n)
+        go(tail(l), i + 1)
+      else
+        l
+    }
+    go(l, 0)
+  }
+
+  object Exercise4Test extends App {
+    assert(List.drop(List(1, 2, 3, 4, 5), 2) == List(3, 4, 5))
+    assert(List.drop(List(1, 2, 3, 4, 5), 5) == Nil)
+    assert(List.drop(List(1, 2, 3, 4, 5), 6) == Nil)
+    assert(List.drop(List(1, 2, 3, 4, 5), 1) == List(2, 3, 4, 5))
+    assert(List.drop(List(1, 2, 3, 4, 5), 4) == List(5))
+    assert(List.drop(List(1), 0) == List(1))
+    assert(List.drop(Nil, 5) == Nil)
+  }
+
+Exercise 5
+
+def getFirst[A](as: List[A]): A = {
+    as match {
+      case Nil => throw new IndexOutOfBoundsException("")
+      case Cons(head, tail) => head
+    }
+  }
+
+  def size[A](l: List[A]): Int = {
+    @annotation.tailrec
+    def go(list: List[A], i: Int): Int = {
+      list match {
+        case Nil => i
+        case Cons(x, xs) => go(xs, i + 1)
+      }
+    }
+    go(l, 0)
+  }
+
+def dropWhile[A](l: List[A], f: A => Boolean): List[A] = {
+    @annotation.tailrec
+    def go(list: List[A], i: Int): List[A] = {
+      if (i < size(list) && f(getFirst(list)))
+        go(tail(list), i + 1)
+      else
+        list
+    }
+    go(l, 0)
+  }
+
+  object Exercise5Test extends App {
+    assert(List.dropWhile(List(1, 20, 3, 4, 5), (a: Int) => a <= 10) == List(20, 3, 4, 5))
+    assert(List.dropWhile(List(1, 2, 30, 4, 5), (a: Int) => a <= 10) == List(30, 4, 5))
+    assert(List.dropWhile(List(1, 2, 30, 4, 5), (a: Int) => a > 10) == List(1, 2, 30, 4, 5))
+    assert(List.dropWhile(List(1, 20, 30, 4, 5), (a: Int) => a < 10) == List(20, 30, 4, 5))
+    assert(List.dropWhile(List(), (a: Int) => a < 10) == List())
+  }
+
+  Exercise 6
+
+  def init[A](l: List[A]): List[A] = {
+    @annotation.tailrec
+    def go(list: List[A], newList: List[A]): List[A] = {
+      list match {
+        case Nil => Nil
+        case Cons(x, xs) =>
+          if (size(xs) == 0)
+            newList
+          else
+            go(xs, append(newList, List(x)))
+      }
+    }
+    go(l, List())
+  }
+
+object Exercise6Test extends App {
+  val actualList = List.init(List(1, 20, 3, 4, 5))
+  val expectedList = List(1, 20, 3, 4)
+  assert(actualList == expectedList)
+  assert(List.init(List(1)) == List())
+  assert(List.init(Nil) == Nil)
+  val actualList1 = List.init(List(1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20, 3))
+  val expectedList1 = List(1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20, 3, 4, 5, 1, 20)
+  assert(actualList1 == expectedList1)
+}
+The function does not take constant time. The execution time for it is the size of the original list.
+The reason why the execution time is not constant is, as the book mentions, "any time we want to replace the tail of a
+Cons, even if it's the last Cons in the list, we must copy all the previous Cons objects.", so all the items in the
+tail have to be copied in a new list for this method, leading to O(n) complexity.
+The function takes constant space, equal with the the size of the original list.
+
+// Exercise 7
+  def length[A](as: List[A]): Int = {
+    as match {
+      case Nil =>
+        0
+      case Cons(x, xs) =>
+        foldRight(as, 0)((x: A, length) => length + 1)
+    }
+  }
+
+  object Exercise7Test extends App {
+    assert(List.length(List(1, 2, 3, 4, 5)) == 5)
+    assert(List.length(List(1)) == 1)
+    assert(List.length(List()) == 0)
+  }
+
+  // Exercise 8
+  @tailrec
+  def foldLeft[A, B](as: List[A], z: B)(f: (B, A) => B): B = {
+    as match {
+      case Nil => z
+      case Cons(x, xs) =>
+        if (size(xs) == 0)
+          f(z, x)
+        else
+          foldLeft(xs, f(z, x))(f)
+    }
+  }
+
+object Exercise8Test extends App {
+  //  foldRight
+  val actualResult = List.foldRight(List(1, 2, 3, 4, 5, 6), 0)((a: Int, b: Int) => a + b)
+  val expectedResult = 21
+  val actualResult1 = List.foldRight(List(1, 2, 3, 4, 5, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+    , 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), 0)((a: Int, b: Int) => a + b)
+  val expectedResult1 = 246
+  assert(actualResult1 == expectedResult1)
+
+  val actualResult2 = List.foldLeft(List(1, 2, 3, 4, 5, 6), 0)((a: Int, b: Int) => a + b)
+  val expectedRestul2 = 21
+  assert(actualResult2 == expectedRestul2)
+  assert(List.foldLeft(List(), 0)((a: Int, b:Int) => a + b) == 0)
+  assert(List.foldLeft(List(1), 0)(_ + _) == 1)
+  assert(List.foldLeft(List(1, 2), 0)(_ + _) == 3)
+}
+
+def sum(as: List[Int]): Int = {
+    foldLeft(as, 0)((x: Int, y: Int) => x + y)
+  }
+
+  def product(as: List[Int]): Int = {
+    foldLeft(as, 1)((x: Int, y: Int) => x * y)
+  }
+
+  def length1(as: List[Int]): Int = {
+    foldLeft(as, 0)((x: Int, y: Int) => x + 1)
+  }
+
+object Exercise9Test extends App {
+  //  sum
+  assert(List.sum(List(1, 2, 3)) == 6)
+  assert(List.sum(List(1)) == 1)
+  assert(List.sum(List()) == 0)
+  //  product
+  val actualValue = List.product(List(1, 2, 3))
+  assert(actualValue == 6)
+  assert(List.product(List(1)) == 1)
+  //  length1
+  val actualLength = List.length1(List(1, 2, 3, 4, 5))
+  assert(actualLength == 5)
+  assert(List.length1(List(1)) == 1)
+  assert(List.length1(List()) == 0)
+}
+
+// Exercise 10
+  def reverse[A](as: List[A]): List[A] = {
+    foldLeft(as, List[A]())((b, a) => Cons(a, b))
+  }
+
+object Exercise10Test extends App {
+  assert(List.reverse(List(1, 2, 3)) == List(3, 2, 1))
+  assert(List.reverse(List(1)) == List(1))
+  assert(List.reverse(List()) == List())
+}
+
+  // Exercise 11
+  def foldRight1[A, B](as: List[A], z: B)(f: (A, B) => B): B = {
+    foldLeft(reverse(as), z)((b, a) => f(a, b))
+  }
+
+  def foldLeft1[A, B](as: List[A], z: B)(f: (B, A) => B): B = {
+    foldRight(as, (b: B) => b)((a, g) => b => g(f(b, a)))(z)
+  }
+
+object Exercise11Test extends App {
+  val actualResult = List.foldRight1(List(1, 2, 3, 4, 5, 6), 0)((a: Int, b: Int) => a + b)
+  val expectedResult = 21
+  assert(actualResult==expectedResult)
+  val actualResult1 = List.foldRight1(List(1, 2, 3, 4, 5, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+    , 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), 0)((a: Int, b: Int) => a + b)
+  val expectedResult1 = 246
+  assert(actualResult1 == expectedResult1)
+
+  val actualResult2 = List.foldRight1(List(1, 2, 3, 4, 5, 6), 0)((a: Int, b: Int) => a + b)
+  val expectedResult2 = 21
+  assert(actualResult2 == expectedResult2)
+  assert(List.foldRight1(List(), 0)((a: Int, b: Int) => a + b) == 0)
+  assert(List.foldRight1(List(1), 0)(_ + _) == 1)
+  assert(List.foldRight1(List(1, 2), 0)(_ + _) == 3)
+}
+
+def concat[A](as: List[List[A]]): List[A] = {
+    foldLeft(as, List[A]())((a, b) => append(a, b))
+  }
+
+object Exercise12Test extends App {
+  val actualList = List.concat(List(List(1), List(2), List(3)))
+  val expectedList = List(1, 2, 3)
+  assert(actualList == expectedList)
+  assert(List.concat(List(List(), List(), List())) == List())
+  assert(List.concat(List(List(1, 2, 3), List(4, 5), List(6, 7))) == List(1, 2, 3, 4, 5, 6, 7))
+}
+
+  // Exercise 13
+  def filter[A](as: List[A])(f: A => Boolean): List[A] = {
+    foldRight(as, Nil: List[A])((x, xs) => if (f(x)) {
+         Cons(x, xs)
+       } else {
+         xs
+    })
+   }
+
+object Exercise13Test extends App {
+  //Use it to remove all odd numbers from a List[Int] (in REPL). 13
+  val actualList = List.filter(List(1, 2, 3, 4, 5))((a: Int) => a % 2 == 0)
+  val expectedList = List(2, 4)
+  assert(actualList == expectedList)
+}
+
+  // Exercise 14
+  def map[A, B](l: List[A])(f: A => B): List[B] = {
+    foldRight(l, Nil: List[B])((h, t) => Cons(f(h), t))
+  }
+
+  def flatMap[A, B](as: List[A])(f: A => List[B]): List[B] = {
+    concat(map(as)(f))
+  }
+
+object Exercise14Test extends App {
+  val actualList = List.flatMap(List[Int](1, 2, 3))((i: Int) => List(i, i))
+  assert(actualList == List(1, 1, 2, 2, 3, 3))
+  val actualList1 = List.flatMap(List[Int](1, 2, 3))((i: Int) => List(0, 0))
+  assert(actualList1 == List(0, 0, 0, 0, 0, 0))
+  val actualList2 = List.flatMap(List[Int](1, 2, 3))((i: Int) => List(i * i))
+  assert(actualList2 == List(1, 4, 9))
+  val actualList3 = List.flatMap(List[Int](1, 2, 3))((i: Int) => List(i - 1, i - 2, i - 3))
+  assert(actualList3 == List(0, -1, -2, 1, 0, -1, 2, 1, 0))
+}
+
+  // Exercise 15
+  def filter1[A](l: List[A])(p: A => Boolean): List[A] = {
+    flatMap(l)(i => if (p(i))
+      List(i)
+    else
+      List())
+  }
+
+object Exercise15Test extends App {
+  //Use it to remove all odd numbers from a List[Int] (in REPL). 13
+  val actualList = List.filter1(List(1, 2, 3, 4, 5))((a: Int) => a % 2 == 0)
+  val expectedList = List(2, 4)
+  assert(actualList == expectedList)
+}
+
+  // Exercise 16
+  def add(l: List[Int])(r: List[Int]): List[Int] = {
+  (l, r) match {
+      case (Nil, _) => Nil
+      case (_, Nil) => Nil
+      case (Cons(h1, t1), Cons(h2, t2)) => Cons((h1 + h2), add(t1)(t2))
+    }
+  }
+
+object Exercise16Test extends App {
+  val actualList = List.add(List(1, 2, 3))(List(4, 5, 6, 7))
+  assert(actualList == List(5, 7, 9))
+}
+
+  // Exercise 17
+  def zipWith[A, B, C](f: (A, B) => C)(l: List[A], r: List[B]): List[C] = {
+  (l, r) match {
+      case (Nil, _) => Nil
+      case (_, Nil) => Nil
+      case (Cons(h1, t1), Cons(h2, t2)) => Cons(f(h1, h2), zipWith(f)(t1, t2))
+    }
+  }
+
+object Exercise17Test extends App {
+  def f = (a: Int, b: Int) => a + b;
+  val actualList = List.zipWith(f)(List(1, 2, 3), List(4, 5, 6, 7))
+  assert(actualList == List(5, 7, 9))
+  def f1 = (a: Int, b: Int) => a * b;
+  val actualList1 = List.zipWith(f1)(List(1, 2, 3), List(4, 5, 6, 7))
+  assert(actualList1 == List(4, 10, 18))
+
+}
+
+  // Exercise 18
+def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = {
+ (sup, sub) match {
+      case (Nil, Nil) => {
+        true
+      }
+      case (Nil, _) => {
+        false
+      }
+      case (_, Nil) => {
+        true
+      }
+      case (Cons(h1, t1), Cons(h2, t2)) => {
+        if (h1 == h2) {
+          hasSubsequence(t1, t2)
+        }
+        else {
+          hasSubsequence(t1, sub)
+        }
+      }
+    }
+  }
+
+object Exercise18Test extends App {
+  assert(List.hasSubsequence(List(1, 2, 3, 4), List(1, 2)))
+  assert(List.hasSubsequence(List(1, 2, 3, 4), List(2, 3)))
+  assert(List.hasSubsequence(List(1, 2, 3, 4), List(4)))
+  assert(List.hasSubsequence(List(1, 2, 3, 4), List()))
+  assert(!List.hasSubsequence(List(1, 2, 3, 4), List(8)))
+}
+
+// Exercise 19 does not have a proper solution
